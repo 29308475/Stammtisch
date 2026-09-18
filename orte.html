@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <script src="js/theme.js?v=2"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Die gemeinsame Stammtisch-Chronik.">
+  <title>Stammtisch | Orte auf der Karte</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css?v=23">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="js/app.js?v=13" defer></script>
+  <script src="js/navigation.js?v=1" defer></script>
+  <link rel="stylesheet" href="css/theme.css?v=3">
+</head>
+<body class="map-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Stammtisch Odelzhausen Startseite">
+      <svg class="brand-crest" aria-hidden="true" width="36" height="36" viewBox="0 0 36 36"><path fill="currentColor" d="M18 3 31 7v10c0 7-5 12-13 16C10 29 5 24 5 17V7Z"/></svg>
+      <span class="brand-name">Stammtisch <span class="brand-location">Odelzhausen</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav id="primary-navigation" class="top-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Statistik</a>
+      <a href="chronik.html">Chronik</a>
+      <a href="kalender.html">Kalender</a>
+      <a class="top-nav-active" href="orte.html#orte">Orte auf der Karte</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-label="Dunkles Design" aria-checked="false"><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+    </nav>
+    <span class="header-note">Seit M&auml;rz 2023</span>
+  </header>
+
+  <main>
+    <section class="map-home" id="orte" aria-labelledby="map-title">
+      <div class="map-layout">
+        <aside class="map-sidebar" aria-label="Treffen auf der Karte">
+          <p class="eyebrow map-sidebar-label">Unsere Orte</p>
+          <label class="map-search"><span class="sr-only">Orte durchsuchen</span><input id="map-search" type="search" placeholder="Ort oder Restaurant suchen ..."></label>
+          <div class="map-result-list" id="map-meetings" aria-live="polite"></div>
+          <a class="map-sidebar-link" href="chronik.html">Alle 41 Treffen ansehen <span aria-hidden="true">&rarr;</span></a>
+        </aside>
+        <div id="meeting-map" class="meeting-map" role="application" aria-label="Karte der Stammtisch-Orte"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Stammtisch-Chronik</span>
+    <span>Mit Liebe gepflegt</span>
+  </footer>
+</body>
+</html>

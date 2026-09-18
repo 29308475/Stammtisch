@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <script src="js/theme.js?v=2"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stammtisch | Kalender</title>
+  <link rel="stylesheet" href="css/style.css?v=23">
+  <link rel="stylesheet" href="css/dashboard.css?v=4">
+  <link rel="stylesheet" href="css/calendar.css?v=3">
+  <script src="js/calendar.js?v=1" defer></script>
+  <script src="js/calendar-page.js?v=1" defer></script>
+  <script src="js/navigation.js?v=1" defer></script>
+  <link rel="stylesheet" href="css/theme.css?v=3">
+</head>
+<body class="dashboard-page calendar-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Stammtisch Odelzhausen Startseite"><svg class="brand-crest" aria-hidden="true" width="36" height="36" viewBox="0 0 36 36"><path fill="currentColor" d="M18 3 31 7v10c0 7-5 12-13 16C10 29 5 24 5 17V7Z"/></svg><span class="brand-name">Stammtisch <span class="brand-location">Odelzhausen</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Men&uuml; &ouml;ffnen" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav id="primary-navigation" class="top-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Statistik</a>
+      <a href="chronik.html">Chronik</a>
+      <a class="top-nav-active" aria-current="page" href="kalender.html">Kalender</a>
+      <a href="orte.html#orte">Orte auf der Karte</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-label="Dunkles Design" aria-checked="false"><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+    </nav>
+    <span class="header-note">Seit M&auml;rz 2023</span>
+  </header>
+  <main>
+    <section class="dashboard-heading">
+      <div><p class="eyebrow">Zeit f&uuml;r die Runde</p><h1>Unser <em>Kalender.</em></h1><p>Alle Treffen im Tag, in der Woche, im Monat und im Jahr.</p></div>
+    </section>
+    <section class="dashboard-toolbar" aria-label="Kalender filtern">
+      <div class="dashboard-filters"><label>Zeitraum<select id="dashboard-year" disabled><option value="">Alle Jahre</option></select></label><label>Ausgesucht von<select id="dashboard-person" disabled><option value="">Alle Personen</option></select></label><button id="dashboard-reset" type="button" disabled>Zur&uuml;cksetzen</button></div>
+      <p id="dashboard-status" role="status" aria-live="polite">Chronik wird geladen &hellip;</p>
+    </section>
+    <div id="dashboard-content" hidden>
+      <section class="dashboard-grid" aria-label="Kalender">
+        <article class="dashboard-panel timeline-panel">
+          <div class="panel-heading"><div><p class="eyebrow">Unsere gemeinsamen Abende</p><h2>Stammtisch-Kalender</h2></div><span class="panel-badge" id="calendar-total"></span></div>
+          <div class="calendar-toolbar">
+            <div class="calendar-navigation"><button type="button" id="calendar-prev" aria-label="Vorheriger Zeitraum">&#8249;</button><button type="button" id="calendar-today">Heute</button><button type="button" id="calendar-next" aria-label="Nächster Zeitraum">&#8250;</button></div>
+            <div class="calendar-views" role="group" aria-label="Kalenderansicht"><button type="button" data-calendar-view="day" aria-pressed="false">Tag</button><button type="button" data-calendar-view="week" aria-pressed="false">Woche</button><button type="button" data-calendar-view="month" aria-pressed="true">Monat</button><button type="button" data-calendar-view="year" aria-pressed="false">Jahr</button></div>
+          </div>
+          <h3 id="calendar-title" tabindex="-1" aria-live="polite"></h3>
+          <div id="calendar-body"></div>
+          <p class="calendar-note">Markierte Tage öffnen die Treffen. Uhrzeiten sind in der Chronik nicht hinterlegt. Die Filter oben gelten auch für den Kalender.</p>
+        </article>
+      </section>
+    </div>
+    <noscript><p class="empty-state">Bitte aktiviere JavaScript, um den Kalender anzuzeigen.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>Stammtisch-Chronik</span><span>Mit Liebe gepflegt</span></footer>
+</body>
+</html>
