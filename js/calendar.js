@@ -4,6 +4,7 @@ window.StammtischCalendar = class {
     this.date = new Date();
     this.view = 'month';
     this.body = document.getElementById('calendar-body');
+    this.enableSwipe();
     document.querySelectorAll('[data-calendar-view]').forEach((button) => button.addEventListener('click', () => {
       this.view = button.dataset.calendarView;
       this.render();
@@ -19,6 +20,48 @@ window.StammtischCalendar = class {
       this.render();
       document.getElementById('calendar-title').focus();
     });
+  }
+
+  enableSwipe() {
+    let gesture = null;
+    let suppressClickUntil = 0;
+    this.body.addEventListener('touchstart', (event) => {
+      suppressClickUntil = 0;
+      if (event.touches.length !== 1) { gesture = null; return; }
+      const touch = event.touches[0];
+      gesture = { id: touch.identifier, x: touch.clientX, y: touch.clientY, started: Date.now(), horizontal: false };
+    }, { passive: true });
+    this.body.addEventListener('touchmove', (event) => {
+      if (!gesture || event.touches.length !== 1) { gesture = null; return; }
+      const touch = event.touches[0];
+      const dx = Math.abs(touch.clientX - gesture.x);
+      const dy = Math.abs(touch.clientY - gesture.y);
+      if (!gesture.horizontal) {
+        if (dy > 12 && dy >= dx) { gesture = null; return; }
+        if (dx > 18 && dx > dy * 1.7) gesture.horizontal = true;
+      }
+      if (gesture.horizontal && event.cancelable) event.preventDefault();
+    }, { passive: false });
+    this.body.addEventListener('touchend', (event) => {
+      const current = gesture;
+      gesture = null;
+      if (!current || event.touches.length) return;
+      const touch = Array.from(event.changedTouches).find((item) => item.identifier === current.id);
+      if (!touch) return;
+      const dx = touch.clientX - current.x;
+      const dy = touch.clientY - current.y;
+      if (current.horizontal) suppressClickUntil = Date.now() + 500;
+      if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.7 || Date.now() - current.started > 1200) return;
+      suppressClickUntil = Date.now() + 500;
+      this.move(dx < 0 ? 1 : -1);
+    }, { passive: true });
+    this.body.addEventListener('touchcancel', () => { gesture = null; }, { passive: true });
+    this.body.addEventListener('click', (event) => {
+      if (event.detail !== 0 && Date.now() < suppressClickUntil) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    }, true);
   }
 
   key(date) {
