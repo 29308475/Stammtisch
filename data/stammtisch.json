@@ -34,11 +34,11 @@
   {"date": "2025-12-27", "selector": "Chris", "restaurant": "Berghof", "cuisine": "Deutsch", "city": "Augsburg"},
   {"date": "2026-01-23", "selector": "Oli", "restaurant": "Gasthaus zur Post", "cuisine": "Kroatisch", "city": "Eurasburg"},
   {"date": "2026-02-28", "selector": "Rails", "restaurant": "Farfallinas Patisserie", "cuisine": "Deutsch", "city": "Wagenhofen"},
-  {"date": "2026-03-29", "selector": "Erles", "restaurant": "Hotel Modi", "cuisine": "Deutsch", "city": "Dachau"},
+  {"date": "2026-03-29", "selector": "Erlemanns", "restaurant": "Hotel Modi", "cuisine": "Deutsch", "city": "Dachau"},
   {"date": "2026-04-29", "selector": "Heino", "restaurant": "Kartpalast", "cuisine": "Deutsch/Italienisch", "city": "Gada"},
   {"date": "2026-05-30", "selector": "Chris", "restaurant": "Fischerwirt", "cuisine": "Deutsch", "city": "Baindlkirch"},
   {"date": "2026-06-26", "selector": "Christina", "restaurant": "Landhausbräu Koller", "cuisine": "Deutsch", "city": "Hergertswiesen"},
   {"date": "2026-07-29", "selector": "Christina", "restaurant": "Grillen bei Christina", "cuisine": "Deutsch", "city": "Dietenhausen"},
-  {"date": "2026-08-29", "selector": "Rails", "restaurant": "Gasthof Wagner", "cuisine": "Deutsch", "city": "Untergriesbach"},
-  {"date": "2026-09-19", "selector": "Oli", "restaurant": "Waldgaststätte Egenhofen", "cuisine": "International", "city": "Egenhofen"}
+  {"date": "2026-08-29", "selector": "Rails", "restaurant": "Gasthof Wagner", "cuisine": "Deutsch", "city": "Aichach-Untergriesbach"},
+  {"date": "2026-09-19", "selector": "Oli", "restaurant": "Waldgaststätte", "cuisine": "International", "city": "Oberweikertshofen"}
 ]

@@ -19,7 +19,7 @@ let allMeetings = [];
 let meetingMap;
 
 const cityCoordinates = {
-  Egenhofen: [48.261334, 11.171955],
+  Oberweikertshofen: [48.261334, 11.171955],
   Aichach: [48.457, 11.134], Augsburg: [48.366, 10.898], Altomünster: [48.387, 11.256],
   Baindlkirch: [48.272, 11.077], Bergkirchen: [48.256, 11.364], Dachau: [48.260, 11.434],
   Dietenhausen: [48.303, 11.206], Erdweg: [48.331, 11.298], Eurasburg: [48.333, 11.083],
@@ -27,7 +27,7 @@ const cityCoordinates = {
   Inchenhofen: [48.508, 11.112], Maisach: [48.216, 11.257], Mauerbach: [48.349, 11.326],
   Mering: [48.265, 10.985], "Markt Indersdorf": [48.360, 11.378], München: [48.137, 11.575],
   Odelzhausen: [48.309, 11.199], Pöttmes: [48.583, 11.117], Sielenbach: [48.400, 11.167],
-  Untergriesbach: [48.553, 13.671], Wagenhofen: [48.555, 11.268]
+  "Aichach-Untergriesbach": [48.45793, 11.15376], Wagenhofen: [48.555, 11.268]
 };
 
 const uniqueCount = (meetings, key) => new Set(meetings.map((meeting) => meeting[key])).size;
@@ -216,3 +216,26 @@ const loadMeetings = async () => {
 };
 
 loadMeetings();
+
+const loadPlannedMeetings = async () => {
+  const container = document.querySelector('#planned-meetings');
+  if (!container) return;
+  try {
+    const response = await fetch('data/planned-meetings.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const meetings = await response.json();
+    meetings.forEach((meeting) => {
+      const note = document.createElement('p');
+      note.textContent = `Treffen ${meeting.id}: ${meeting.selector} sucht aus. Datum, Lokal und Ort stehen noch nicht fest.`;
+      container.append(note);
+    });
+    container.hidden = !meetings.length;
+  } catch (error) {
+    container.hidden = false;
+    const note = document.createElement('p');
+    note.textContent = 'Die Vorschau auf kommende Treffen konnte nicht geladen werden.';
+    container.append(note);
+    console.error('Geplante Treffen konnten nicht geladen werden:', error);
+  }
+};
+loadPlannedMeetings();
