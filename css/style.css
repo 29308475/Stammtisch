@@ -105,7 +105,7 @@ h2 { font-size: clamp(1.2rem, 2vw, 1.5rem); letter-spacing: -0.015em; }
 .map-result { display: grid; grid-template-columns: 18px 1fr; gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
 .map-result:hover, .map-result:focus-visible { background: var(--sage); outline: 0; }
 .map-result:last-child { border-bottom: 0; }
-.map-result-pin { width: 12px; height: 12px; margin-top: 5px; border: 3px solid #d8eafa; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 1px var(--coral); }
+.map-result-pin { justify-self: center; width: 12px; height: 12px; margin-top: 5px; border: 3px solid #d8eafa; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 1px var(--coral); }
 .map-result h2 { margin: 0 0 2px; font-family: Arial, sans-serif; font-size: 0.98rem; font-weight: 400; letter-spacing: 0; }
 .map-result p { margin: 0 0 5px; color: var(--muted); font-size: 0.78rem; }
 .map-result span:not(.map-result-pin) { color: var(--coral-dark); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
