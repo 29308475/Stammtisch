@@ -34,10 +34,6 @@ window.StammtischCalendar = class {
       if (selectedYear) this.date = new Date(Number(selectedYear), 0, 1, 12);
       this.selectedYear = selectedYear;
     }
-    if (!this.initialized && rows.length) {
-      this.date = new Date(`${rows.map((row) => row.date).sort().at(-1)}T12:00:00`);
-    }
-    this.initialized = true;
     this.rows = rows;
     this.render();
   }
