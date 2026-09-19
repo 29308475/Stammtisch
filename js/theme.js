@@ -9,8 +9,8 @@
     const toggle = document.getElementById('theme-toggle');
     if (toggle) {
       const dark = document.documentElement.dataset.theme === 'dark';
-      toggle.setAttribute('aria-checked', String(dark));
       toggle.title = dark ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln';
+      toggle.setAttribute('aria-label', toggle.title);
     }
   };
   apply();
