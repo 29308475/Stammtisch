@@ -39,5 +39,6 @@
   {"date": "2026-05-30", "selector": "Chris", "restaurant": "Fischerwirt", "cuisine": "Deutsch", "city": "Baindlkirch"},
   {"date": "2026-06-26", "selector": "Christina", "restaurant": "Landhausbräu Koller", "cuisine": "Deutsch", "city": "Hergertswiesen"},
   {"date": "2026-07-29", "selector": "Christina", "restaurant": "Grillen bei Christina", "cuisine": "Deutsch", "city": "Dietenhausen"},
-  {"date": "2026-08-29", "selector": "Rails", "restaurant": "Gasthof Wagner", "cuisine": "Deutsch", "city": "Untergriesbach"}
+  {"date": "2026-08-29", "selector": "Rails", "restaurant": "Gasthof Wagner", "cuisine": "Deutsch", "city": "Untergriesbach"},
+  {"date": "2026-09-19", "selector": "Oli", "restaurant": "Waldgaststätte Egenhofen", "cuisine": "International", "city": "Egenhofen"}
 ]

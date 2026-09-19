@@ -19,6 +19,7 @@ let allMeetings = [];
 let meetingMap;
 
 const cityCoordinates = {
+  Egenhofen: [48.261334, 11.171955],
   Aichach: [48.457, 11.134], Augsburg: [48.366, 10.898], Altomünster: [48.387, 11.256],
   Baindlkirch: [48.272, 11.077], Bergkirchen: [48.256, 11.364], Dachau: [48.260, 11.434],
   Dietenhausen: [48.303, 11.206], Erdweg: [48.331, 11.298], Eurasburg: [48.333, 11.083],
@@ -40,6 +41,7 @@ const formatDate = (dateString) => new Intl.DateTimeFormat('de-DE', {
 const mapsUrl = (meeting) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${meeting.restaurant}, ${meeting.city}`)}`;
 
 const renderStats = (meetings) => {
+  document.querySelectorAll('[data-meeting-total]').forEach((element) => { element.textContent = meetings.length; });
   if (meetingCount) meetingCount.textContent = meetings.length;
   if (selectorCount) selectorCount.textContent = uniqueCount(meetings, 'selector');
   if (cityCount) cityCount.textContent = uniqueCount(meetings, 'city');
