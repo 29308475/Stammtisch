@@ -1,0 +1,57 @@
+:root {
+  --cal-blue: #225c98;
+  --cal-blue-hover: #174775;
+  --cal-meeting: #d0eae6;
+  --cal-meeting-hover: #b9ded7;
+  --cal-teal: #08675e;
+  --cal-event-text: #123e3a;
+  --cal-muted-text: #38645e;
+  --cal-weekend: #edf3fa;
+  --cal-hover: #dce8f6;
+  --cal-border: #b8ccdf;
+  --cal-today: #225c98;
+  --cal-today-text: #fff;
+}
+:root[data-theme="dark"] {
+  --cal-blue: #286aa8;
+  --cal-blue-hover: #347fbe;
+  --cal-meeting: #174b49;
+  --cal-meeting-hover: #205e59;
+  --cal-teal: #74d9c5;
+  --cal-event-text: #e4fbf6;
+  --cal-muted-text: #b2ded4;
+  --cal-weekend: #223347;
+  --cal-hover: #304b68;
+  --cal-border: #425b75;
+  --cal-today: #a6d5ff;
+  --cal-today-text: #12304c;
+}
+:root .timeline-panel .calendar-weekdays {
+  background: var(--cal-blue); color: #fff; border-radius: 6px;
+  padding-block: 7px; margin-bottom: 5px; font-weight: 600;
+}
+:root .timeline-panel .calendar-days { border-color: var(--cal-border); background: var(--cal-border); }
+:root .timeline-panel .calendar-mini .calendar-days { background: transparent; }
+:root .timeline-panel .calendar-day:nth-child(7n),
+:root .timeline-panel .calendar-day:nth-child(7n - 1) { background: var(--cal-weekend); }
+:root .timeline-panel .calendar-day.outside-month { background: var(--paper); color: var(--muted); }
+:root .timeline-panel .calendar-day:hover { background: var(--cal-hover); }
+:root .timeline-panel .calendar-day.has-meeting {
+  background: var(--cal-meeting); color: var(--cal-event-text);
+  box-shadow: inset 0 3px 0 var(--cal-teal);
+}
+:root .timeline-panel .calendar-day.has-meeting:hover { background: var(--cal-meeting-hover); }
+:root .timeline-panel .calendar-day.is-today { outline: 2px solid var(--cal-today); outline-offset: -2px; }
+:root .timeline-panel .calendar-day.is-today .calendar-day-number { background: var(--cal-today); color: var(--cal-today-text); font-weight: 700; }
+:root .timeline-panel .calendar-event-preview { color: var(--cal-event-text); border-color: var(--cal-teal); }
+:root .timeline-panel .calendar-mobile-count { color: var(--cal-event-text); font-weight: 600; }
+:root .timeline-panel .calendar-dot { background: var(--cal-teal); }
+:root .timeline-panel .calendar-mini .calendar-day.has-meeting { box-shadow: none; }
+:root .timeline-panel .calendar-event { background: var(--cal-meeting); color: var(--cal-event-text); border-color: var(--cal-teal); }
+:root .timeline-panel .calendar-event-time { color: var(--cal-muted-text); }
+:root .timeline-panel .calendar-week-date { background: var(--cal-blue); color: white; }
+:root .timeline-panel .calendar-week-date:hover { background: var(--cal-blue-hover); }
+:root .timeline-panel .calendar-views button[aria-pressed="true"] { background: var(--cal-blue); color: white; }
+:root .timeline-panel .calendar-views button[aria-pressed="true"]:hover { background: var(--cal-blue-hover); }
+:root .timeline-panel #calendar-today { border-color: var(--cal-blue); color: var(--coral-dark); font-weight: 600; }
+:root .timeline-panel .calendar-day:focus-visible { outline: 3px solid var(--cal-today); outline-offset: -3px; }
